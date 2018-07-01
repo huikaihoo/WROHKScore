@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>WRO 香港機械人挑戰賽 2018</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="dataTables/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <div class="ui fixed inverted menu">
+      <div class="ui container">
+        <a href="#" class="header item">
+          <!-- <img class="logo" src="assets/images/logo.png"> -->
+          WRO 香港機械人挑戰賽 2018
+        </a>
+        <a href="#" class="item"><i class="rocket icon"></i> 太空任務挑戰賽</a>
+        <a href="#speed" class="item"><i class="car icon"></i> 極速循線挑戰賽</a>
+      </div>
+    </div>
+
+    <div class="ui main basic segment container">
+      <div id="space" class="ui vertical very padded segment">
+        <h1 class="ui header"><i class="rocket icon"></i> 太空任務挑戰賽 Space Challenge</h1>
+
+        <div class="ui three item tabs top attached menu">
+          <a class="ui space group item" value="小學組">小學組</a>
+          <a class="ui space group item" value="中學組">中學組</a>
+          <a class="ui space group item active" value="0">所有組別</a>
+        </div>
+        <div class="ui four item tabs attached menu">
+          <a class="ui space round item" value="1">第一回合</a>
+          <a class="ui space round item" value="2">第二回合</a>
+          <a class="ui space round item" value="3">第三回合</a>
+          <a class="ui space round item active" value="0">所有回合</a>
+        </div>
+        <div class="ui attached segment">
+         <table id="table_space" class="ui inverted blue celled table">
+            <thead>
+              <tr>
+                <th>Group</th>
+                <th>Team</th>
+                <th>School</th>
+                <th>Round</th>
+                <th>Score</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+
+      <div id="speed" class="ui vertical very padded segment">
+        <h1 class="ui header"><i class="car icon"></i> 極速循線挑戰賽 Speed Challenge</h1>
+
+        <div class="ui three item tabs top attached menu">
+          <a class="ui item">小學組</a>
+          <a class="ui item">中學組</a>
+          <a class="ui item active">所有組別</a>
+        </div>
+        <div class="ui four item tabs attached menu">
+          <a class="ui item">第一回合</a>
+          <a class="ui item">第二回合</a>
+          <a class="ui item">第三回合</a>
+          <a class="ui item active">所有回合</a>
+        </div>
+        <div class="ui attached segment">
+         <table id="table_speed" class="ui inverted green celled table">
+            <thead>
+              <tr>
+                <th>Group</th>
+                <th>Team</th>
+                <th>School</th>
+                <th>Round</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+
+      <p id="data"></p>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script src="semantic/dist/semantic.min.js"></script>
+  <script src="dataTables/datatables.min.js"></script>
+  <script src="tabletop/tabletop.js"></script>
+  <script src="js/basic.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        init();
+      });
+</script>
+</html>
