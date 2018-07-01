@@ -47,7 +47,6 @@ function showData(data) {
     section.table.rows.add(section.filter()).draw();
   }
 
-  $('#data').html(JSON.stringify(data));
   console.log(data);
 }
 
