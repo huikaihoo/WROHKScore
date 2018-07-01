@@ -27,7 +27,6 @@
     <div class="ui main basic segment container">
       <div id="space" class="ui vertical very padded segment">
         <h1 class="ui header"><i class="rocket icon"></i> 太空任務挑戰賽 Space Challenge</h1>
-
         <div class="ui three item tabs top attached menu">
           <a class="ui space group item" value="小學組">小學組</a>
           <a class="ui space group item" value="中學組">中學組</a>
@@ -58,17 +57,16 @@
       <!-- Speed Challenge -->
       <div id="speed" class="ui vertical very padded segment">
         <h1 class="ui header"><i class="car icon"></i> 極速循線挑戰賽 Speed Challenge</h1>
-
         <div class="ui three item tabs top attached menu">
-          <a class="ui item">小學組</a>
-          <a class="ui item">中學組</a>
-          <a class="ui item active">所有組別</a>
+          <a class="ui speed group item" value="小學組">小學組</a>
+          <a class="ui speed group item" value="中學組">中學組</a>
+          <a class="ui speed group item active" value="0">所有組別</a>
         </div>
         <div class="ui four item tabs attached menu">
-          <a class="ui item">第一回合</a>
-          <a class="ui item">第二回合</a>
-          <a class="ui item">第三回合</a>
-          <a class="ui item active">所有回合</a>
+          <a class="ui speed round item" value="1">第一回合</a>
+          <a class="ui speed round item" value="2">第二回合</a>
+          <a class="ui speed round item" value="3">第三回合</a>
+          <a class="ui speed round item active" value="0">所有回合</a>
         </div>
         <div class="ui attached segment">
          <table id="table_speed" class="ui inverted green celled table">
@@ -79,6 +77,7 @@
                 <th>School</th>
                 <th>Round</th>
                 <th>Time</th>
+                <th>Time (with bonus)</th>
               </tr>
             </thead>
           </table>

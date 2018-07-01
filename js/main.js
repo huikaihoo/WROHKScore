@@ -1,6 +1,7 @@
 'use strict';
 
 var space;
+var speed;
 
 function init() {
   // Initialize Configs
@@ -25,13 +26,26 @@ function initDataTable() {
     ],
     order: [[4, 'desc'], [5, 'asc']]
   });
-  $('#table_speed').DataTable();
+  speed.table = $('#table_speed').DataTable({
+    columns: [
+      { data: 'Group' },
+      { data: 'Team' },
+      { data: 'School' },
+      { data: 'Round', searchable: false },
+      { data: 'Time', searchable: false },
+      { data: 'Score', searchable: false }
+    ],
+    order: [[5, 'desc']]
+  });
 }
 
 function initTabletop() {
   Tabletop.init( { key: space.url,
                    callback: showData,
                    simpleSheet: true } );
+  Tabletop.init( { key: speed.url,
+                 callback: showData,
+                 simpleSheet: true } );
 }
 
 function showData(data) {
@@ -39,6 +53,8 @@ function showData(data) {
   var section;
   if (this.googleSheetName == space.sheetName) {
     section = space;
+  } else if (this.googleSheetName == speed.sheetName) {
+    section = speed;
   }
 
   // Show data on target section
@@ -64,6 +80,8 @@ function itemHandler() {
   var section;
   if ($(this).hasClass('space')) {
     section = space;
+  } else if ($(this).hasClass('speed')) {
+    section = speed;
   }
 
   // Apply filter action on target section
