@@ -12,7 +12,7 @@
   <body>
 
     <!-- Header -->
-    <div class="ui fixed inverted menu">
+    <div class="ui large fixed inverted menu">
       <div class="ui container">
         <a href="#" class="header item">
           <!-- <img class="logo" src="assets/images/logo.png"> -->
@@ -20,11 +20,16 @@
         </a>
         <a href="#" class="item"><i class="rocket icon"></i> 太空任務挑戰賽</a>
         <a href="#speed" class="item"><i class="car icon"></i> 極速循線挑戰賽</a>
+        <a onclick="initTabletop()" class="right item">
+          <div id="loader_loading" class="ui tiny active inverted centered inline loader"></div>
+          <i id="loader_finish" class="hidden sync alternate icon"></i>
+        </a>
       </div>
     </div>
 
-    <!-- Space Challenge -->
+    <!-- Main Content -->
     <div class="ui main basic segment container">
+      <!-- Space Challenge -->
       <div id="space" class="ui vertical very padded segment">
         <h1 class="ui header"><i class="rocket icon"></i> 太空任務挑戰賽 Space Challenge</h1>
         <div class="ui three item tabs top attached menu">
@@ -42,12 +47,12 @@
          <table id="table_space" class="ui inverted blue celled table">
             <thead>
               <tr>
-                <th>Group</th>
-                <th>Team</th>
-                <th>School</th>
-                <th>Round</th>
-                <th>Score</th>
-                <th>Time</th>
+                <th>組別</th>
+                <th>隊伍</th>
+                <th>學校</th>
+                <th>回合</th>
+                <th>分數</th>
+                <th>時間</th>
               </tr>
             </thead>
           </table>
@@ -72,19 +77,28 @@
          <table id="table_speed" class="ui inverted green celled table">
             <thead>
               <tr>
-                <th>Group</th>
-                <th>Team</th>
-                <th>School</th>
-                <th>Round</th>
-                <th>Time</th>
-                <th>Time (with bonus)</th>
+                <th>組別</th>
+                <th>隊伍</th>
+                <th>學校</th>
+                <th>回合</th>
+                <th>時間</th>
+                <th>時間 (扣減獎勵時間後)</th>
               </tr>
             </thead>
           </table>
         </div>
       </div>
-
     </div>
+
+    <!-- Footer -->
+    <div class="ui inverted vertical footer segment">
+      <div class="ui center aligned container">
+        <div class="ui horizontal inverted small divided link list">
+          以上資料僅供參考，最終結果以大會宣佈為準。
+        </div>
+      </div>
+    </div>
+
   </body>
   <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"

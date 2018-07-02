@@ -1,5 +1,7 @@
 'use strict';
 
+var loader;
+var updateInterval;
 var space;
 var speed;
 
@@ -13,9 +15,14 @@ function init() {
 
   // Initialize UI
   initUI();
+
+  // Auto update for every 
+  setInterval(initTabletop, updateInterval);
 }
 function initDataTable() {
   space.table = $('#table_space').DataTable({
+    language: tableLanguage,
+    lengthMenu: [10, 20, 50],
     columns: [
       { data: 'Group' },
       { data: 'Team' },
@@ -27,6 +34,8 @@ function initDataTable() {
     order: [[4, 'desc'], [5, 'asc']]
   });
   speed.table = $('#table_speed').DataTable({
+    language: tableLanguage,
+    lengthMenu: [10, 20, 50],
     columns: [
       { data: 'Group' },
       { data: 'Team' },
@@ -40,12 +49,15 @@ function initDataTable() {
 }
 
 function initTabletop() {
-  Tabletop.init( { key: space.url,
+  if (loader.getCnt() <= 0) {
+    loader.setCnt(2);
+    Tabletop.init( { key: space.url,
+                     callback: showData,
+                     simpleSheet: true } );
+    Tabletop.init( { key: speed.url,
                    callback: showData,
                    simpleSheet: true } );
-  Tabletop.init( { key: speed.url,
-                 callback: showData,
-                 simpleSheet: true } );
+  }
 }
 
 function showData(data) {
@@ -59,7 +71,9 @@ function showData(data) {
 
   // Show data on target section
   if (section) {
+    loader.changeCnt(-1);
     section.data = data;
+    section.table.clear();
     section.table.rows.add(section.filter()).draw();
   }
 
