@@ -44,7 +44,7 @@ function initDataTable() {
       { data: 'Time', searchable: false },
       { data: 'Score', searchable: false }
     ],
-    order: [[5, 'desc']]
+    order: [[5, 'asc']]
   });
 }
 
