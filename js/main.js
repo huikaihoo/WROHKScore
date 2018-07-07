@@ -50,10 +50,10 @@ function initDataTable() {
 
 function initTabletop() {
   if (loader.getCnt() <= 0) {
-    loader.setCnt(2);
-    Tabletop.init( { key: space.url,
-                     callback: showData,
-                     simpleSheet: true } );
+    loader.setCnt(1);
+    // Tabletop.init( { key: space.url,
+    //                  callback: showData,
+    //                  simpleSheet: true } );
     Tabletop.init( { key: speed.url,
                    callback: showData,
                    simpleSheet: true } );
